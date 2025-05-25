@@ -26,33 +26,41 @@ public class Linked_list {
 
                 case 1:
                     System.out.println("Введите название задачи");
-                    String Swordadd = scanner.nextLine();
+                    String workadd = scanner.nextLine();
 
-                    String workAdd = new String(Swordadd);
-                    list.add(Swordadd);
-                    //int idx=list.indexOf(Swordadd);
-                    System.out.println("Новая задача " + workAdd + " Добавлена");
+                    list.add(workadd);
+                    System.out.println("Новая задача " + workadd + " Добавлена");
 
                     break;
 
                 case 2:
-                    // for (int i = 0; i < list.size(); i++) {
-                    //    System.out.println(list.get(i));
-                    for (String s : list) {
-                        System.out.println(s);
+                    for (int i = 0; i < list.size(); i++) {
+                        System.out.println((i + 1) + "." + " " + list.get(i));
                     }
                     break;
 
                 case 3:
                     System.out.println(" Введите номер дела который вы хотите удалить");
-                    int killNumber = Integer.parseInt(scanner.nextLine());
-                    list.remove(killNumber - 1);
+                    int number = Integer.parseInt(scanner.nextLine());
+                    if(Integer.parseInt(String.valueOf((number-1)))>= list.size() || number < 0){
+                         System.out.println("Задание с таким номером не найдено");
+                    }else{
+                    int killnumber = Integer.parseInt(String.valueOf(number-1));
+                        list.remove(killnumber - 1);
+
+
+                    }
+
+
+
                     break;
                 case 4:
                     System.out.println("Введите название дела которое вы хотите удалить");
                     String killword = scanner.nextLine();
                     if (list.contains(killword)) {
                         list.remove(killword);
+                    } else if (!list.contains(killword)) {
+                        System.out.println("Задание с таким названием не найдено");
                     }
                     break;
             }
