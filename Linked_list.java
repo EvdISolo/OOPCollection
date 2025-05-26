@@ -44,6 +44,7 @@ public class Linked_list {
                     System.out.println(" Введите номер дела который вы хотите удалить");
                     int number = Integer.parseInt(scanner.nextLine());
                     if (number >= list.size() || number < 0) {
+                        System.out.println("Задание с таким индексом не найдено");
 
                     } else {
                         list.remove(number - 1);
