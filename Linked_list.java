@@ -3,6 +3,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
+
 public class Linked_list {
     public static void main(String[] args) {
 
@@ -42,15 +43,13 @@ public class Linked_list {
                 case 3:
                     System.out.println(" Введите номер дела который вы хотите удалить");
                     int number = Integer.parseInt(scanner.nextLine());
-                    if(Integer.parseInt(String.valueOf((number-1)))>= list.size() || number < 0){
-                         System.out.println("Задание с таким номером не найдено");
-                    }else{
-                    int killnumber = Integer.parseInt(String.valueOf(number-1));
-                        list.remove(killnumber - 1);
+                    if (number >= list.size() || number < 0) {
+
+                    } else {
+                        list.remove(number - 1);
 
 
                     }
-
 
 
                     break;
